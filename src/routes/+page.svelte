@@ -6,5 +6,5 @@
 
 <Meta
 	Title="Home"
-	Description="Nightmare Bot is a personal assistant project that uses Artificial Intelligence and Machine Learning algorithms to solve problems."
+	Description="Onlyfoodz is a social media platform where people share pictures and small videos of food."
 />
