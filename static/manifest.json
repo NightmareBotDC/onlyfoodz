@@ -1,12 +1,12 @@
 {
   "background_color": "#ff914d",
-  "description": "Nightmare Bot is a personal assistant project that uses Artificial Intelligence and Machine Learning algorithms to solve problems.",
+  "description": "Onlyfoodz is a social media platform where people share pictures and small videos of food.",
   "dir": "auto",
   "display": "standalone",
-  "name": "Nightmare Project",
+  "name": "Onlyfoodz by Nightmare Project",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "Nightmare Bot",
+  "short_name": "Onlyfoodz",
   "start_url": "/",
   "theme_color": "#3c3c3c",
   "categories": [
