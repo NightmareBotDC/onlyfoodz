@@ -7,11 +7,11 @@
 <svelte:head>
 	<title>{Title}</title>
 	<meta property="og:title" content={Title} />
-	<meta property="og:site_name" content="Nightmare Project" />
+	<meta property="og:site_name" content="Onlyfoodz" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://nightmarebot.tk/" />
+	<meta property="og:url" content="https://onlyfoodz.nightmarebot.tk/" />
 	<meta property="og:image" content={Image} />
 	<meta property="og:description" content={Description} />
         <meta property="theme-color" content="#3c3c3c" />
-        <link rel="manifest" href="https://nightmarebot.tk/manifest.json">
+        <link rel="manifest" href="https://onlyfoodz.nightmarebot.tk/manifest.json">
 </svelte:head>
