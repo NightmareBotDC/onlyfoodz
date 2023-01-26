@@ -7,7 +7,7 @@
 <svelte:head>
 	<title>{Title}</title>
 	<meta property="og:title" content={Title} />
-	<meta property="og:site_name" content="Onlyfoodz" />
+	<meta property="og:site_name" content="Onlyfoodz by Nightmare Project" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://onlyfoodz.nightmarebot.tk/" />
 	<meta property="og:image" content={Image} />
