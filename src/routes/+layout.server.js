@@ -3,7 +3,7 @@ import cookie from 'cookie';
 export const load = async ({ request, setHeaders }) => {
 	const cookies = cookie.parse(request.headers.get('cookie') || '');
 
-        if (cookies.token) {
+	if (cookies.token) {
 		const userData = await fetch(
 			`https://api.nightmarebot.tk/api/users/getwithtoken?token=${cookies.token}`
 		)

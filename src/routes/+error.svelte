@@ -2,8 +2,6 @@
 	import { page } from '$app/stores';
 	import Meta from './components/Meta.svelte';
 
-	export let data: any;
-
 	export let subText: string | null;
 	subText = 'But dont worry, you can find plenty of other things on our homepage.';
 </script>

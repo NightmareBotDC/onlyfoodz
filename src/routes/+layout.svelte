@@ -10,5 +10,5 @@
 <div class="p-3" />
 
 <section id="content" class="m-4">
-     <slot />
+	<slot />
 </section>

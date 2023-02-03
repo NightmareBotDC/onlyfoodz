@@ -12,6 +12,6 @@
 	<meta property="og:url" content="https://onlyfoodz.nightmarebot.tk/" />
 	<meta property="og:image" content={Image} />
 	<meta property="og:description" content={Description} />
-        <meta property="theme-color" content="#3c3c3c" />
-        <link rel="manifest" href="https://onlyfoodz.nightmarebot.tk/manifest.json">
+	<meta property="theme-color" content="#3c3c3c" />
+	<link rel="manifest" href="https://onlyfoodz.nightmarebot.tk/manifest.json" />
 </svelte:head>

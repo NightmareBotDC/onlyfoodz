@@ -1,32 +1,29 @@
 {
-  "background_color": "#ff914d",
-  "description": "Onlyfoodz is a social media platform where people share pictures and small videos of food.",
-  "dir": "auto",
-  "display": "standalone",
-  "name": "Onlyfoodz by Nightmare Project",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "short_name": "Onlyfoodz",
-  "start_url": "/",
-  "theme_color": "#3c3c3c",
-  "categories": [
-    "entertainment",
-    "utilities"
-  ],
-  "screenshots": [],
-  "icons": [
-    {
-      "src": "/logo.png",
-      "type": "image/png",
-      "sizes": "220x220"
-    },
-    {
-      "src": "/logo_512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "shortcuts": [],
-  "lang": "en",
-  "prefer_related_applications": false
+	"background_color": "#ff914d",
+	"description": "Onlyfoodz is a social media platform where people share pictures and small videos of food.",
+	"dir": "auto",
+	"display": "standalone",
+	"name": "Onlyfoodz by Nightmare Project",
+	"orientation": "portrait-primary",
+	"scope": "/",
+	"short_name": "Onlyfoodz",
+	"start_url": "/",
+	"theme_color": "#3c3c3c",
+	"categories": ["entertainment", "utilities"],
+	"screenshots": [],
+	"icons": [
+		{
+			"src": "/logo.png",
+			"type": "image/png",
+			"sizes": "220x220"
+		},
+		{
+			"src": "/logo_512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"shortcuts": [],
+	"lang": "en",
+	"prefer_related_applications": false
 }
