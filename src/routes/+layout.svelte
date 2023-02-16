@@ -5,7 +5,7 @@
 	export let data: any;
 </script>
 
-<Header User={data.user || null} />
+<Header user={data.user || null} />
 
 <div class="p-3" />
 
