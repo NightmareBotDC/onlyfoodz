@@ -11,7 +11,7 @@
     {/if}
 
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{Caption}</h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">{CreatedAt}</p>
+    <p class="font-normal text-gray-700 dark:text-gray-400">{new Date(CreatedAt)}</p>
 </a>
 
 <div class="p-2"></div>
