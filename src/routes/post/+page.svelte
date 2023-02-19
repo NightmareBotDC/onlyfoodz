@@ -1,5 +1,27 @@
 <script lang="ts">
    import Meta from '../components/Meta.svelte';
+   import Swal from 'sweetalert2';
+
+   const Alert = (title: string, description: string, time: number) => {
+	Swal.fire({
+	     title: title,
+	     text: description,
+	     timer: time,
+	     timerProgressBar: true
+	});
+   };
+
+   const loginDiscord = async () => {
+	const data = await fetch('https://api.nightmarebot.tk/auth/discord/login').catch((error) => {
+	    Alert('Error:', error, 4000);
+	});
+
+	if (data.status === 200) {
+	    const json = await data.json();
+	    if (json.error) Alert('Error:', json.error, 4000);
+	    else window.location.href = json.url;
+        } else Alert('Error:', `It seems that our servers is having issues at this time!`, 2000);
+   };
 
    export let data;
 </script>
@@ -12,5 +34,19 @@
 {#if data.user}
    <h2 class="text-white">This page is coming soon.</h2>
 {:else}
-   <h2 class="text-white">You are not logged in.</h2>
+   <section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
+	<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+		<div class="max-w-md text-center">
+			<h2 class="mb-8 font-extrabold text-9xl dark:text-gray-600">
+				<span class="sr-only">Error</span>401
+			</h2>
+			<p class="text-2xl font-semibold md:text-3xl">You are not logged in.</p>
+			<p class="mt-4 mb-8 dark:text-gray-400">To view this page, you need to login.</p>
+			<button
+				on:click={loginDiscord}
+				class="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Login</a
+			>
+		</div>
+	</div>
+   </section>
 {/if}
