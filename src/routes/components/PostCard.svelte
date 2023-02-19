@@ -3,10 +3,10 @@
    export let Caption: String;
    export let Image: String;
    export let CreatedAt: Date;
-   export let PostId: String;
+   export let PostID: String;
 </script>
 
-<a href="/post/{PostId}" class="block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+<a href="/post/{PostID}" class="block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
     <h2
 	class="flex"
     >
