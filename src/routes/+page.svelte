@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Meta from './components/Meta.svelte';
+        import PostCard from './components/PostCard.svelte';
 
 	export let data: any;
 </script>
@@ -10,3 +11,7 @@
 />
 
 <h2 class="text-white font-semibold text-2xl">Coming Soon!</h2>
+
+{#each data.posts as item}
+   <PostCard User={item.user} Caption={item.post.Caption} Image={item.post.Image} CreatedAt={item.post.CreatedAt} />
+{/each}
