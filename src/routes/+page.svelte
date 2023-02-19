@@ -17,5 +17,5 @@
 <div class="p-2"></div>
 
 {#each data.posts as item}
-   <PostCard User={item.user} Caption={item.post.Caption} Image={item.post.Image} CreatedAt={item.post.CreatedAt} />
+   <PostCard User={item.user} Caption={item.post.Caption} Image={item.post.Image} CreatedAt={item.post.CreatedAt} PostID={item.post.PostID} />
 {/each}
