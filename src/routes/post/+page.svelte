@@ -44,7 +44,7 @@
 			<p class="mt-4 mb-8 dark:text-gray-400">To view this page, you need to login.</p>
 			<button
 				on:click={loginDiscord}
-				class="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Login</a
+				class="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Login</button
 			>
 		</div>
 	</div>
