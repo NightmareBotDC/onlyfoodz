@@ -12,6 +12,21 @@
 
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{Caption}</h5>
     <p class="font-normal text-gray-700 dark:text-gray-400">{new Date(CreatedAt)}</p>
+
+    <div class="p-2"></div>
+
+    <h2
+	class="flex"
+    >
+	<img
+	    class="h-8 rounded-full"
+	    src="https://cdn.discordapp.com/avatars/{User.UserID}/{User.Avatar}"
+            height="30px"
+	    width="30px"
+	    alt="Profile Picture"
+	/>
+	    <p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">{User.Username}</p>
+    </h2>
 </a>
 
 <div class="p-2"></div>
