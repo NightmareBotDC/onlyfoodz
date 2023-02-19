@@ -1,4 +1,6 @@
 <script lang="ts">
+   import PostCard from '../../components/PostCard.svelte';
+
    export let data;
 </script>
 
