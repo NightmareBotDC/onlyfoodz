@@ -13,5 +13,10 @@
 
    <PostCard User={data.post.user} Caption={data.post.post.Caption} Image={data.post.post.Image} CreatedAt={data.post.post.CreatedAt} PostID={data.post.post.PostID} />
 {:else}
+   <Meta
+	Title="Post"
+	Description="Sorry, that post does not exist in this universe!"
+   />
+
    <h2 class="text-white">Sorry, that post does not exist in this universe!</h2>
 {/if}
