@@ -2,4 +2,8 @@
    export let data;
 </script>
 
-<h2 class="text-white">{data.post.post.Caption}</h2>
+{#if data.post}
+   <PostCard User={data.post.user} Caption={data.post.post.Caption} Image={data.post.post.Image} CreatedAt={data.post.post.CreatedAt} />
+{:else}
+   <h2 class="text-white">Sorry, that post does not exist in this universe!</h2>
+{/if}
