@@ -40,7 +40,7 @@
 			<h2 class="mb-8 font-extrabold text-9xl dark:text-gray-600">
 				<span class="sr-only">Error</span>401
 			</h2>
-			<p class="text-2xl font-semibold md:text-3xl">You are not logged in.</p>
+			<p class="text-2xl font-semibold md:text-3xl">Unauthorized</p>
 			<p class="mt-4 mb-8 dark:text-gray-400">To view this page, you need to login.</p>
 			<button
 				on:click={loginDiscord}
