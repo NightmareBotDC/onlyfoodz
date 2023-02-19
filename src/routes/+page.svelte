@@ -11,6 +11,10 @@
 />
 
 <h2 class="text-white font-semibold text-2xl">Coming Soon!</h2>
+<div class="p-6"></div>
+
+<h2 class="text-white font-semibold text-2xl">Test Posts:</h2>
+<div class="p-2"></div>
 
 {#each data.posts as item}
    <PostCard User={item.user} Caption={item.post.Caption} Image={item.post.Image} CreatedAt={item.post.CreatedAt} />
