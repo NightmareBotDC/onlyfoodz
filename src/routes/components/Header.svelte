@@ -6,6 +6,7 @@
 
 	const navigation = [
 		{ name: 'Home', href: '/', current: true },
+                { name: 'Post', href: '/post', current: false }
 	];
 
 	const profileNavigation = [
