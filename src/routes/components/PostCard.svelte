@@ -1,6 +1,6 @@
 <script lang="ts">
    export let User: Object;
-   export let Caption: String:
+   export let Caption: String;
    export let Image: String;
    export let CreatedAt: Date;
 </script>
