@@ -6,15 +6,6 @@
 </script>
 
 <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-    {#if Image}
-       <img src={Image} alt="Post Card" height="120px" width="120px" />
-    {/if}
-
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{Caption}</h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">{new Date(CreatedAt)}</p>
-
-    <div class="p-2"></div>
-
     <h2
 	class="flex"
     >
@@ -27,6 +18,15 @@
 	/>
 	    <p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">{User.Username}</p>
     </h2>
+
+    <div class="p-2"></div>
+
+    {#if Image}
+       <img src={Image} alt="Post Card" height="120px" width="120px" />
+    {/if}
+
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{Caption}</h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">{new Date(CreatedAt)}</p>
 </a>
 
 <div class="p-2"></div>
