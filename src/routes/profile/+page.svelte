@@ -56,6 +56,14 @@
 		<p class="font-normal text-gray-700 dark:text-gray-400">
 			Account Creation Date: {new Date(data.user.CreatedAt)}
 		</p>
+
+                {#if data.user.UserID === data.user.UserID}
+                    <div class="p-2"></div>
+
+                    <div id="profile_actions">
+                        <button>Edit Profile</button>
+                    </div>
+                {/if}
 	</div>
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
