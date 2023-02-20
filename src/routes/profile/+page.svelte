@@ -65,6 +65,20 @@
                     </div>
                 {/if}
 	</div>
+
+        <div id="posts">
+           <h2 class="text-white font-bold text-2xl">Posts:</div>
+       
+           {#each data.userPosts as item}
+	       <PostCard
+		  User={item.user}
+		  Caption={item.post.Caption}
+		  Image={item.post.Image}
+		  CreatedAt={item.post.CreatedAt}
+		  PostID={item.post.PostID}
+	       />
+           {/each}
+        </div>
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
