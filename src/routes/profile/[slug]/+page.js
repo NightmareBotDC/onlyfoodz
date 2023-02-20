@@ -4,7 +4,12 @@ export async function load({ params }) {
 		(res) => res.json()
 	);
 
+        let profilePosts;
+        if (!profile || profile.error) profilePosts = await fetch(`https://api.nightmarebot.tk/api/posts/list_user?user_id=${profile.UserID}&type=1`).then((res) => res.json());
+        else profilePosts = null;
+
 	return {
-		profile: profile
+		profile: profile,
+                profilePosts: profilePosts
 	};
 }
