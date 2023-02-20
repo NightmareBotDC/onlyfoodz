@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Meta from '../../components/Meta.svelte';
+        import PostCard from '../../components/PostCard.svelte';
 
 	export let data: any;
 </script>
