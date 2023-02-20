@@ -37,10 +37,10 @@
 	>
 		<h2 class="flex">
 			<img
-				class="rounded-full"
+				class="h-10 rounded-full"
 				src="https://cdn.discordapp.com/avatars/{data.user.UserID}/{data.user.Avatar}"
-				height="120px"
-				width="120px"
+				height="40px"
+				width="40px"
 				alt="Profile Picture"
 			/>
 			<p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">
@@ -48,7 +48,7 @@
 			</p>
 		</h2>
 
-		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+		<h5 class="mb-2 font-normal text-gray-700 dark:text-gray-400">
 			Bio: {data.user.Bio || 'None'}
 		</h5>
 		<p class="font-normal text-gray-700 dark:text-gray-400">
