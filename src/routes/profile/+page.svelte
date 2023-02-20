@@ -67,7 +67,6 @@
                 {/if}
 	</div>
 
-      {#if !data.userPosts || data.userPosts.error}
         <div class="p-4"></div>
 
         <div id="posts">
@@ -84,7 +83,6 @@
 	       />
            {/each}
         </div>
-      {/if}
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
