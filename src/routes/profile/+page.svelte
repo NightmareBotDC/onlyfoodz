@@ -67,9 +67,12 @@
                 {/if}
 	</div>
 
+        <div class="p-2"></div>
+
         <div id="posts">
-           <h2 class="text-white font-bold text-2xl">Posts:</h2>
-       
+           <h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
+           <div class="p-1"></div>
+
            {#each data.userPosts as item}
 	       <PostCard
 		  User={data.user}
