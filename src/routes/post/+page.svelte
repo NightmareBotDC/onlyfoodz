@@ -33,7 +33,7 @@
         reader.readAsDataURL(image);
 
         reader.onload = (a: any) => {
-            image = a.target.result;
+            imageElement = a.target.result;
         };
     };
 
@@ -53,7 +53,7 @@
 {#if data.user}
 	<h2 class="text-white font-bold text-3xl text-center">Post Something!</h2>
 	<h4 class="text-white font-bold text-lg text-center">
-		Make sure you are following our <a href="/legal/communityguidelines" class="bg-indigo-700"
+		Make sure you are following our <a href="/legal/communityguidelines" class="text-red-600"
 			>Community Guidelines</a
 		> :)
 	</h4>
@@ -66,8 +66,8 @@
 			<input type="text" placeholder="Write your Caption here!" name="caption" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
-            <button on:click={chooseImage}>Choose an Image</button>
-			<input type="file" id="image" class="display-none" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={imageInput} name="image" />
+            <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
+			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={imageInput} name="image" />
 
             <img height="120px" width="120px" class="rounded-full" src={imageElement} alt="Image Preview">
 		</form>
