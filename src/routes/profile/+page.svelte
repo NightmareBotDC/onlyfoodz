@@ -43,7 +43,7 @@
 				width="60px"
 				alt="Profile Picture"
 			/>
-			<p class="ml-2 mt-3 mb-3 font-bold text-xl text-white">
+			<p class="ml-2 mt-4 mb-4 font-bold text-xl text-white">
 				{data.user.Username}
 			</p>
 		</h2>
