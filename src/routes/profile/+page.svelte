@@ -96,20 +96,28 @@
 
 	<div class="p-4" />
 
-	<div id="posts">
+	{#if !data.userPosts || data.userPosts.error}
+		<h2 class="text-white font-bold">Unable to render posts.</h2>
+	{:else if data.userPosts.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
 		<div class="p-1" />
+		<h2 class="text-white font-bold">You don't have any posts yet, create one now!</h2>
+	{:else}
+		<div id="posts">
+			<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
+			<div class="p-1" />
 
-		{#each data.userPosts as item}
-			<PostCard
-				User={data.user}
-				Caption={item.Caption}
-				Image={item.Image}
-				CreatedAt={item.CreatedAt}
-				PostID={item.PostID}
-			/>
-		{/each}
-	</div>
+			{#each data.userPosts as item}
+				<PostCard
+					User={data.user}
+					Caption={item.Caption}
+					Image={item.Image}
+					CreatedAt={item.CreatedAt}
+					PostID={item.PostID}
+				/>
+			{/each}
+		</div>
+	{/if}
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">

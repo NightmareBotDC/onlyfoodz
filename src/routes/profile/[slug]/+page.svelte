@@ -76,18 +76,26 @@
 
 	<div class="p-4" />
 
-	<div id="posts">
+	{#if !data.profilePosts || data.profilePosts.error}
+		<h2 class="text-white font-bold">Unable to render posts.</h2>
+	{:else if data.profilePosts.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
 		<div class="p-1" />
+		<h2 class="text-white font-bold">This user does not have any posts, at this time.</h2>
+	{:else}
+		<div id="posts">
+			<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
+			<div class="p-1" />
 
-		{#each data.profilePosts as item}
-			<PostCard
-				User={data.profile}
-				Caption={item.Caption}
-				Image={item.Image}
-				CreatedAt={item.CreatedAt}
-				PostID={item.PostID}
-			/>
-		{/each}
-	</div>
+			{#each data.profilePosts as item}
+				<PostCard
+					User={data.profile}
+					Caption={item.Caption}
+					Image={item.Image}
+					CreatedAt={item.CreatedAt}
+					PostID={item.PostID}
+				/>
+			{/each}
+		</div>
+	{/if}
 {/if}
