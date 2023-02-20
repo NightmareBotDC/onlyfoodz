@@ -32,7 +32,24 @@
 />
 
 {#if data.user}
-	<h2 class="text-white">This page is coming soon.</h2>
+	<h2 class="text-white font-bold text-3xl text-center">Post Something!</h2>
+	<h4 class="text-white font-bold text-lg text-center">
+		Make sure you are following our <a href="/legal/communityguidelines" class="bg-indigo-700"
+			>Community Guidelines</a
+		> :)
+	</h4>
+
+	<div class="p-4" />
+
+	<div id="data">
+		<form>
+			<label for="caption" class="sr-only">Caption (required)</label>
+			<input type="text" placeholder="Write your Caption here!" name="caption" />
+
+			<label for="image" class="sr-only">Choose an Image (optional)</label>
+			<input type="image" aria-label="Choose an Image (optional)" name="image" />
+		</form>
+	</div>
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
