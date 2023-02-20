@@ -48,6 +48,8 @@
 			</p>
 		</h2>
 
+                <div class="p-2"></div>
+
 		<h5 class="font-normal text-gray-700 dark:text-gray-400">
 			Bio: {data.user.Bio || 'None'}
 		</h5>
