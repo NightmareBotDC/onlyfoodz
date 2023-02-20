@@ -43,12 +43,12 @@
 				width="60px"
 				alt="Profile Picture"
 			/>
-			<p class="ml-2 mt-1 mb-1 font-normal text-1xl text-black dark:text-white">
+			<p class="ml-2 mt-1 mb-1 font-bold text-xl text-white">
 				{data.user.Username}
 			</p>
 		</h2>
 
-		<h5 class="mb-2 font-normal text-gray-700 dark:text-gray-400">
+		<h5 class="font-normal text-gray-700 dark:text-gray-400">
 			Bio: {data.user.Bio || 'None'}
 		</h5>
 		<p class="font-normal text-gray-700 dark:text-gray-400">
