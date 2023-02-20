@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Meta from '../components/Meta.svelte';
+        import PostCard from '../components/PostCard.svelte';
 	import Swal from 'sweetalert2';
 
 	const Alert = (title: string, description: string, time: number) => {
