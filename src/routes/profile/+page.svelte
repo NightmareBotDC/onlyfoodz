@@ -67,7 +67,7 @@
                 {/if}
 	</div>
 
-      {#if !data.userPosts || data.userPosts.error || !data.userPosts.length === 0}
+      {#if !data.userPosts || data.userPosts.error}
         <div class="p-4"></div>
 
         <div id="posts">
