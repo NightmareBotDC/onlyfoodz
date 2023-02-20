@@ -13,7 +13,12 @@
 <h2 class="text-white font-semibold text-2xl">Coming Soon!</h2>
 <div class="p-6" />
 
-{#if data.posts || !data.posts.error}
+{#if !data.posts || data.posts.error}
+	<h2 class="text-white font-bold text-3xl">
+		It seems that our servers are currently experiencing a little too much brain damage at this
+		time, please try again later.
+	</h2>
+{:else}
 	<h2 class="text-white font-semibold text-2xl">Posts:</h2>
 	<div class="p-2" />
 
@@ -26,9 +31,4 @@
 			PostID={item.post.PostID}
 		/>
 	{/each}
-{:else}
-	<h2 class="text-white font-bold text-3xl">
-		It seems that our servers are currently experiencing a little too much brain damage at this
-		time, please try again later.
-	</h2>
 {/if}
