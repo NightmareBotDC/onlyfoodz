@@ -18,16 +18,22 @@ export const load = async ({ request, setHeaders }) => {
 		if (userData.error)
 			return {
 				user: null,
-				posts: posts
+				posts: posts,
+                                userPosts: null
 			};
-		else
+		else {
+                        const userPosts = await fetch('https://api.nightmarebot.tk/api/posts/list?type=1').then((res) => res.json());
+
 			return {
 				user: userData,
-				posts: posts
+				posts: posts,
+                                userPosts: userPosts
 			};
+                }
 	} else
 		return {
 			user: null,
-			posts: posts
+			posts: posts,
+                        userPosts: null
 		};
 };
