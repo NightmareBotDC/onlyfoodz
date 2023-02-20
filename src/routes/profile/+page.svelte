@@ -73,10 +73,10 @@
            {#each data.userPosts as item}
 	       <PostCard
 		  User={data.user}
-		  Caption={item.post.Caption}
-		  Image={item.post.Image}
-		  CreatedAt={item.post.CreatedAt}
-		  PostID={item.post.PostID}
+		  Caption={item.Caption}
+		  Image={item.Image}
+		  CreatedAt={item.CreatedAt}
+		  PostID={item.PostID}
 	       />
            {/each}
         </div>
