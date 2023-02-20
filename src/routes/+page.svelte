@@ -13,15 +13,22 @@
 <h2 class="text-white font-semibold text-2xl">Coming Soon!</h2>
 <div class="p-6" />
 
-<h2 class="text-white font-semibold text-2xl">Test Posts:</h2>
-<div class="p-2" />
+{#if data.posts || !data.posts.error}
+	<h2 class="text-white font-semibold text-2xl">Posts:</h2>
+	<div class="p-2" />
 
-{#each data.posts as item}
-	<PostCard
-		User={item.user}
-		Caption={item.post.Caption}
-		Image={item.post.Image}
-		CreatedAt={item.post.CreatedAt}
-		PostID={item.post.PostID}
-	/>
-{/each}
+	{#each data.posts as item}
+		<PostCard
+			User={item.user}
+			Caption={item.post.Caption}
+			Image={item.post.Image}
+			CreatedAt={item.post.CreatedAt}
+			PostID={item.post.PostID}
+		/>
+	{/each}
+{:else}
+	<h2 class="text-white font-bold text-3xl">
+		It seems that our servers are currently experiencing a little too much brain damage at this
+		time, please try again later.
+	</h2>
+{/if}
