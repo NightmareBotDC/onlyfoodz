@@ -32,11 +32,29 @@
 />
 
 {#if data.user}
-    <h2 class="text-white">Username: {data.user.Username}</h2>
-    <h2 class="text-white">UserID: {data.user.UserID}</h2>
-    <h2 class="text-white">Bio: {data.user.Bio || "None"}</h2>
-    <h2 class="text-white">Account Creation Date: {new Date(data.user.CreatedAt)}</h2>
-    <img class="rounded-full" src="https://cdn.discordapp.com/avatars/{data.user.UserID}/{data.user.Avatar}" height="120px" width="120px" />
+	<div
+		class="block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+	>
+		<h2 class="flex">
+			<img
+				class="rounded-full"
+				src="https://cdn.discordapp.com/avatars/{data.user.UserID}/{data.user.Avatar}"
+				height="120px"
+				width="120px"
+				alt="Profile Picture"
+			/>
+			<p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">
+				{data.user.Username}
+			</p>
+		</h2>
+
+		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+			Bio: {data.user.Bio || 'None'}
+		</h5>
+		<p class="font-normal text-gray-700 dark:text-gray-400">
+			Account Creation Date: {new Date(data.user.CreatedAt)}
+		</p>
+	</div>
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
