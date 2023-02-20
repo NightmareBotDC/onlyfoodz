@@ -67,7 +67,8 @@
                 {/if}
 	</div>
 
-        <div class="p-2"></div>
+      {#if !data.userPosts || data.userPosts.error || data.userPosts.length === 0}
+        <div class="p-4"></div>
 
         <div id="posts">
            <h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
@@ -83,6 +84,7 @@
 	       />
            {/each}
         </div>
+      {/if}
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
