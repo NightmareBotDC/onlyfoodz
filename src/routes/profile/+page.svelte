@@ -32,7 +32,11 @@
 />
 
 {#if data.user}
-	<h2 class="text-white">This page is coming soon.</h2>
+    <h2 class="text-white">Username: {data.user.Username}</h2>
+    <h2 class="text-white">UserID: {data.user.UserID}</h2>
+    <h2 class="text-white">Bio: {data.user.Bio || "None"}</h2>
+    <h2 class="text-white">Account Creation Date: {new Date(data.user.CreatedAt)}</h2>
+    <img class="rounded-full" src="https://cdn.discordapp.com/avatars/{data.user.UserID}/{data.user.Avatar}" height="120px" width="120px" />
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
