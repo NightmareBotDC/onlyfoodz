@@ -67,7 +67,7 @@
 	</div>
 
         <div id="posts">
-           <h2 class="text-white font-bold text-2xl">Posts:</div>
+           <h2 class="text-white font-bold text-2xl">Posts:</h2>
        
            {#each data.userPosts as item}
 	       <PostCard
