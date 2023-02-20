@@ -60,7 +60,7 @@
            <h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
            <div class="p-1"></div>
 
-           {#each data.userPosts as item}
+           {#each data.profilePosts as item}
 	       <PostCard
 		  User={data.profile}
 		  Caption={item.Caption}
