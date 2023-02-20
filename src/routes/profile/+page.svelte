@@ -72,7 +72,7 @@
        
            {#each data.userPosts as item}
 	       <PostCard
-		  User={item.user}
+		  User={data.user}
 		  Caption={item.post.Caption}
 		  Image={item.post.Image}
 		  CreatedAt={item.post.CreatedAt}
