@@ -39,8 +39,8 @@
 			<img
 				class="rounded-full"
 				src="https://cdn.discordapp.com/avatars/{data.user.UserID}/{data.user.Avatar}"
-				height="80px"
-				width="80px"
+				height="60px"
+				width="60px"
 				alt="Profile Picture"
 			/>
 			<p class="ml-2 mt-1 mb-1 font-normal text-1xl text-black dark:text-white">
