@@ -6,7 +6,7 @@
 
 	const navigation = [
 		{ name: 'Home', href: '/', current: true },
-                { name: 'Post', href: '/post', current: false }
+		{ name: 'Post', href: '/post', current: false }
 	];
 
 	const profileNavigation = [
@@ -80,8 +80,8 @@
 		// Close
 		else notificationPanel.className = 'absolute right-0 z-10 mt-2 w-48 origin-top-right invisible';
 	};
-        
-        export let notifications = [];
+
+	export let notifications = [];
 </script>
 
 <nav class="bg-gray-800">
@@ -128,9 +128,17 @@
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex flex-shrink-0 items-center">
-					<img class="block h-8 w-auto rounded-md lg:hidden" src="/logo.png" alt="The Nightmare Project" />
+					<img
+						class="block h-8 w-auto rounded-md lg:hidden"
+						src="/logo.png"
+						alt="The Nightmare Project"
+					/>
 
-					<img class="hidden h-8 w-auto rounded-md lg:block" src="/logo.png" alt="The Nightmare Project" />
+					<img
+						class="hidden h-8 w-auto rounded-md lg:block"
+						src="/logo.png"
+						alt="The Nightmare Project"
+					/>
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
@@ -156,8 +164,8 @@
 					{#if user}
 						<button
 							type="button"
-                            class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                            id="notifications-button"
+							class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+							id="notifications-button"
 							aria-expanded="false"
 							aria-haspopup="true"
 							on:click={openNotificationPanel}
@@ -201,7 +209,7 @@
 								</button>
 							</div>
 
-                            <div
+							<div
 								class="absolute right-0 z-10 mt-2 w-48 origin-top-right invisible"
 								role="menu"
 								aria-orientation="vertical"
@@ -210,13 +218,13 @@
 								id="open-notifications"
 							>
 								<h2>Notifications</h2>
-                                <button>Mark all as Read!</button>
+								<button>Mark all as Read!</button>
 
-                                {#if notifications.length === 0}
-                                    <h2>There are no notifications to show!</h2>
-                                {:else}
-                                    <h2>There are some notifications to show!</h2>
-                                {/if}
+								{#if notifications.length === 0}
+									<h2>There are no notifications to show!</h2>
+								{:else}
+									<h2>There are some notifications to show!</h2>
+								{/if}
 							</div>
 
 							<div

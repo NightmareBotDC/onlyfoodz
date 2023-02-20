@@ -27,7 +27,7 @@
 </script>
 
 <Meta
-	Title="Post Something"
+	Title="Profile"
 	Description="Onlyfoodz is a social media platform where people share pictures and small videos of food."
 />
 
