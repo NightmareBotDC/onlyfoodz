@@ -37,13 +37,13 @@
 	>
 		<h2 class="flex">
 			<img
-				class="h-10 rounded-full"
+				class="rounded-full"
 				src="https://cdn.discordapp.com/avatars/{data.user.UserID}/{data.user.Avatar}"
-				height="40px"
-				width="40px"
+				height="80px"
+				width="80px"
 				alt="Profile Picture"
 			/>
-			<p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">
+			<p class="ml-2 mt-1 mb-1 font-normal text-1xl text-black dark:text-white">
 				{data.user.Username}
 			</p>
 		</h2>
