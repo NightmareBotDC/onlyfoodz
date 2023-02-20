@@ -2,18 +2,28 @@ import cookie from 'cookie';
 
 export const load = async ({ request, setHeaders }) => {
 	const cookies = cookie.parse(request.headers.get('cookie') || '');
-	const posts = await fetch('https://api.nightmarebot.tk/api/posts/list?type=1').then((res) =>
-		res.json()
-	);
+	const posts = await fetch('https://api.nightmarebot.tk/api/posts/list?type=1').then((res) => {
+		const status = res.status;
+
+		if (status === 200) return res.json();
+		else
+			return {
+				error: 'Unable to reach server.'
+			};
+	});
 
 	if (cookies.token) {
 		const userData = await fetch(
 			`https://api.nightmarebot.tk/api/users/getwithtoken?token=${cookies.token}`
-		)
-			.then((res) => res.json())
-			.catch((err) => {
-				throw new Error(err);
-			});
+		).then((res) => {
+			const status = res.status;
+
+			if (status === 200) return res.json();
+			else
+				return {
+					error: 'Unable to reach server.'
+				};
+		});
 
 		if (userData.error)
 			return {
@@ -24,7 +34,15 @@ export const load = async ({ request, setHeaders }) => {
 		else {
 			const userPosts = await fetch(
 				`https://api.nightmarebot.tk/api/posts/list_user?user_id=${userData.UserID}&type=1`
-			).then((res) => res.json());
+			).then((res) => {
+				const status = res.status;
+
+				if (status === 200) return res.json();
+				else
+					return {
+						error: 'Unable to reach server.'
+					};
+			});
 
 			return {
 				user: userData,

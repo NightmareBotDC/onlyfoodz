@@ -1,7 +1,15 @@
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
 	const profile = await fetch(`https://api.nightmarebot.tk/api/users/get?id=${params.slug}`).then(
-		(res) => res.json()
+		(res) => {
+			const status = res.status;
+
+			if (status === 200) return res.json();
+			else
+				return {
+					error: 'Unable to reach server.'
+				};
+		}
 	);
 
 	let profilePosts;
@@ -9,7 +17,15 @@ export async function load({ params }) {
 	else
 		profilePosts = await fetch(
 			`https://api.nightmarebot.tk/api/posts/list_user?user_id=${profile.UserID}&type=1`
-		).then((res) => res.json());
+		).then((res) => {
+			const status = res.status;
+
+			if (status === 200) return res.json();
+			else
+				return {
+					error: 'Unable to reach server.'
+				};
+		});
 
 	return {
 		profile: profile,
