@@ -24,7 +24,7 @@
 	};
 
     let imagePreview: any;
-    let caption: string = document.getElementById("caption").value;
+    let caption = document.getElementById("caption").value;
 
     let file: any;
     let fileInput: any;
@@ -83,7 +83,7 @@
 			<input type="text" placeholder="Write your Caption here!" id="caption" name="caption" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
-            <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
+                        <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
 			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={fileInput} name="image" />
                         <img height="120px" width="120px" class="rounded-full" src={imagePreview} alt="Image Preview">
 
