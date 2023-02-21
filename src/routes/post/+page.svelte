@@ -27,7 +27,7 @@
     let imagePreview: any;
     let file: any;
     let fileInput: any;
-    let caption: any;
+    export let caption: any;
 
     caption = document.getElementById("caption");
 
