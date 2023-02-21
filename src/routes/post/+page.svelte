@@ -94,13 +94,13 @@
 
                         <div class="p-2"></div>
 
-                        <PostCard
+                        <!--<PostCard
 			   User={data.user}
 			   Caption={caption.value}
 			   Image={imagePreview}
 			   CreatedAt={new Date()}
 			   PostID="post_preview"
-		        />
+		        />-->
 		</form>
 	</div>
 {:else}
