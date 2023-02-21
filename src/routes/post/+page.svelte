@@ -79,7 +79,7 @@
 	<div id="data">
 		<form>
 			<label for="caption" class="sr-only">Caption (required)</label>
-			<input type="text" placeholder="Write your Caption here!" bind:value={caption} name="caption" />
+			<input type="text" placeholder="Write your Caption here!" on:change={(e) => caption = e.value} name="caption" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
             <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
