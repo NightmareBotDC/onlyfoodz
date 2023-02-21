@@ -82,13 +82,18 @@
 			<label for="caption" class="sr-only">Caption (required)</label>
 			<input type="text" placeholder="Write your Caption here!" id="caption" name="caption" class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 bg-gray-700 text-white placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" />
 
+                        <div class="p-2"></div>
+
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
                         <button on:click={chooseImage} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Choose an Image</button>
 			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={fileInput} name="image" />
                         
                         {#if imagePreview}
+                           <div class="p-2"></div>
                            <img height="120px" width="120px" class="rounded-md" src={imagePreview} alt="Image Preview">
                         {/if}
+
+                        <div class="p-2"></div>
 
                         <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" on:click={submitData}>Submit</button>
 		</form>
