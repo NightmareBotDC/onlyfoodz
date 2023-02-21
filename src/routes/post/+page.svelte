@@ -24,6 +24,7 @@
 	};
 
     let imagePreview: any;
+    let caption: string;
     let file: any;
 
     const chooseImage = () => {
@@ -40,6 +41,27 @@
         reader.onload = (a: any) => {
             imagePreview = a.target.result;
         };
+    };
+
+    const submitData = () => {
+        let data = {};
+
+        if (file) {
+           let image = file.target.files[0];
+
+           let reader = new FileReader();
+           reader.readAsDataURL(image);
+
+           reader.onload = (a: any) => {
+               data["image"] = a.target.result;
+           };
+        }
+
+        if (!caption || caption === "") data["caption"] = caption;
+        else data["caption"] = { error: "Oops, a caption is required to post things." };
+
+        console.log(data);
+        return data;
     };
 
 	export let data: any;
@@ -63,13 +85,14 @@
 	<div id="data">
 		<form>
 			<label for="caption" class="sr-only">Caption (required)</label>
-			<input type="text" placeholder="Write your Caption here!" name="caption" />
+			<input type="text" placeholder="Write your Caption here!" bind:value={caption} name="caption" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
             <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
 			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={file} name="image" />
+                        <img height="120px" width="120px" class="rounded-full" src={imagePreview} alt="Image Preview">
 
-            <img height="120px" width="120px" class="rounded-full" src={imagePreview} alt="Image Preview">
+                        <button class="text-white bg-indigo-600 rounded-md" type="button" on:click={submitData}>Submit</button>
 		</form>
 	</div>
 {:else}
