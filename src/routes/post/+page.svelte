@@ -53,7 +53,7 @@
            reader.readAsDataURL(image);
 
            reader.onload = (a: any) => {
-               data["image"] = a.target.result;
+               data["image"] = a.target.result.split(",")[1];
            };
         }
 
