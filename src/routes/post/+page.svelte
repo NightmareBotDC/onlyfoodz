@@ -24,7 +24,7 @@
 	};
 
     let imagePreview: any;
-    let caption: string;
+    let caption: string = document.getElementById("caption").value;
 
     let file: any;
     let fileInput: any;
@@ -50,6 +50,7 @@
         let formData = {};
 
         if (file) formData["image"] = file.split(",")[1];
+        else formData["image"] = null;
 
         if (!caption || caption === "") formData["caption"] = caption;
         else formData["caption"] = { error: "Oops, a caption is required to post things." };
@@ -79,7 +80,7 @@
 	<div id="data">
 		<form>
 			<label for="caption" class="sr-only">Caption (required)</label>
-			<input type="text" placeholder="Write your Caption here!" on:change={(e) => caption = e.value} name="caption" />
+			<input type="text" placeholder="Write your Caption here!" id="caption" name="caption" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
             <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
