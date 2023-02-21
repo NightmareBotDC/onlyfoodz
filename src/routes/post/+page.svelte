@@ -13,13 +13,13 @@
 
 	const loginDiscord = async () => {
 		const data = await fetch('https://api.nightmarebot.tk/auth/discord/login').catch((error) => {
-			Alert('Error:', error, 4000);
+		    Alert('Error:', error, 4000);
 		});
 
 		if (data.status === 200) {
-			const json = await data.json();
-			if (json.error) Alert('Error:', json.error, 4000);
-			else window.location.href = json.url;
+		    const json = await data.json();
+		    if (json.error) Alert('Error:', json.error, 4000);
+		    else window.location.href = json.url;
 		} else Alert('Error:', `It seems that our servers is having issues at this time!`, 2000);
 	};
 
