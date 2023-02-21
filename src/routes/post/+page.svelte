@@ -27,6 +27,9 @@
     let imagePreview: any;
     let file: any;
     let fileInput: any;
+    let caption: any;
+
+    caption = document.getElementById("caption");
 
     const chooseImage = () => {
         const element = document.getElementById("image") as HTMLInputElement;
@@ -47,7 +50,6 @@
 
     const submitData = () => {
         let formData = {};
-        const caption = document.getElementById("caption") as HTMLInputElement;
         
         if (file) formData["image"] = file.split(",")[1];
         else formData["image"] = null;
@@ -94,13 +96,13 @@
 
                         <div class="p-2"></div>
 
-                        <!--<PostCard
+                        <PostCard
 			   User={data.user}
 			   Caption={caption.value}
 			   Image={imagePreview}
 			   CreatedAt={new Date()}
 			   PostID="post_preview"
-		        />-->
+		        />
 		</form>
 	</div>
 {:else}
