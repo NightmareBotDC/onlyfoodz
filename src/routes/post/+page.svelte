@@ -25,7 +25,9 @@
 
     let imagePreview: any;
     let caption: string;
+
     let file: any;
+    let fileInput: any;
 
     const chooseImage = () => {
         const element = document.getElementById("image") as HTMLInputElement;
@@ -40,31 +42,23 @@
 
         reader.onload = (a: any) => {
             imagePreview = a.target.result;
+            file = a.target.result;
         };
     };
 
     const submitData = () => {
-        let data = {};
+        let formData = {};
 
-        if (file) {
-           let image = file.target.files[0];
+        if (file) formData["image"] = file.split(",")[1];
 
-           let reader = new FileReader();
-           reader.readAsDataURL(image);
+        if (!caption || caption === "") formData["caption"] = caption;
+        else formData["caption"] = { error: "Oops, a caption is required to post things." };
 
-           reader.onload = (a: any) => {
-               data["image"] = a.target.result.split(",")[1];
-           };
-        }
-
-        if (!caption || caption === "") data["caption"] = caption;
-        else data["caption"] = { error: "Oops, a caption is required to post things." };
-
-        console.log(data);
-        return data;
+        console.log(formData);
+        return formData;
     };
 
-	export let data: any;
+    export let data: any;
 </script>
 
 <Meta
@@ -89,7 +83,7 @@
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
             <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
-			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={file} name="image" />
+			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={fileInput} name="image" />
                         <img height="120px" width="120px" class="rounded-full" src={imagePreview} alt="Image Preview">
 
                         <button class="text-white bg-indigo-600 rounded-md" type="button" on:click={submitData}>Submit</button>
