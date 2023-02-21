@@ -38,7 +38,7 @@
         reader.readAsDataURL(image);
 
         reader.onload = (a: any) => {
-            imageElement = a.target.result;
+            imagePreview = a.target.result;
         };
     };
 
