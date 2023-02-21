@@ -69,7 +69,7 @@
 
 {#if data.user}
 	<h2 class="text-white font-bold text-3xl text-center">Post Something!</h2>
-	<h4 class="text-white font-bold text-lg text-center">
+	<h4 class="text-white font-bold text-sm text-center">
 		Make sure you are following our <a href="/legal/communityguidelines" class="text-red-600"
 			>Community Guidelines</a
 		> :)
@@ -83,11 +83,14 @@
 			<input type="text" placeholder="Write your Caption here!" id="caption" name="caption" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
-                        <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
+                        <button on:click={chooseImage} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Choose an Image</button>
 			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={fileInput} name="image" />
-                        <img height="120px" width="120px" class="rounded-full" src={imagePreview} alt="Image Preview">
+                        
+                        {#if imagePreview}
+                           <img height="120px" width="120px" class="rounded-md" src={imagePreview} alt="Image Preview">
+                        {/if}
 
-                        <button class="text-white bg-indigo-600 rounded-md" type="button" on:click={submitData}>Submit</button>
+                        <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" on:click={submitData}>Submit</button>
 		</form>
 	</div>
 {:else}
