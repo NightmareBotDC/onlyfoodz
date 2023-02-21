@@ -47,12 +47,12 @@
 
     const submitData = () => {
         let formData = {};
-        const caption = document.getElementById("caption").value;
+        const caption = document.getElementById("caption") as HTMLInputElement;
 
         if (file) formData["image"] = file.split(",")[1];
         else formData["image"] = null;
 
-        if (!caption || caption === "") formData["caption"] = caption;
+        if (caption.value !== "") formData["caption"] = caption.value;
         else formData["caption"] = { error: "Oops, a caption is required to post things." };
 
         console.log(formData);
