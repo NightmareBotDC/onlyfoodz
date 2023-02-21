@@ -25,7 +25,6 @@
 	};
 
     let imagePreview: any;
-    const caption = document.getElementById("caption") as HTMLInputElement;
     let file: any;
     let fileInput: any;
 
@@ -48,7 +47,8 @@
 
     const submitData = () => {
         let formData = {};
-
+        const caption = document.getElementById("caption") as HTMLInputElement;
+        
         if (file) formData["image"] = file.split(",")[1];
         else formData["image"] = null;
 
