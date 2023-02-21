@@ -23,8 +23,13 @@
 		} else Alert('Error:', `It seems that our servers is having issues at this time!`, 2000);
 	};
 
-    let imageElement: any;
-    let imageInput: any;
+    let imagePreview: any;
+    let file: any;
+
+    const chooseImage = () => {
+        const element = document.getElementById("image") as HTMLInputElement;
+        element.click();
+    };
 
     const onImageSelected = (e: any) => {
         let image = e.target.files[0];
@@ -35,11 +40,6 @@
         reader.onload = (a: any) => {
             imageElement = a.target.result;
         };
-    };
-
-    const chooseImage = () => {
-        const element = document.getElementById("image") as HTMLInputElement;
-        element.click();
     };
 
 	export let data: any;
@@ -67,9 +67,9 @@
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
             <button on:click={chooseImage} class="bg-indigo-500 text-white font-bold">Choose an Image</button>
-			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={imageInput} name="image" />
+			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={file} name="image" />
 
-            <img height="120px" width="120px" class="rounded-full" src={imageElement} alt="Image Preview">
+            <img height="120px" width="120px" class="rounded-full" src={imagePreview} alt="Image Preview">
 		</form>
 	</div>
 {:else}
