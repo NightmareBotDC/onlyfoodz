@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Meta from '../components/Meta.svelte';
-	import PostCard from '../components/PostCard.svelte';
-        import Swal from 'sweetalert2';
+	import Swal from 'sweetalert2';
 
 	const Alert = (title: string, description: string, time: number) => {
 		Swal.fire({
@@ -25,11 +24,9 @@
 	};
 
     let imagePreview: any;
+
     let file: any;
     let fileInput: any;
-    export let caption: any;
-
-    caption = document.getElementById("caption");
 
     const chooseImage = () => {
         const element = document.getElementById("image") as HTMLInputElement;
@@ -50,7 +47,8 @@
 
     const submitData = () => {
         let formData = {};
-        
+        const caption = document.getElementById("caption") as HTMLInputElement;
+
         if (file) formData["image"] = file.split(",")[1];
         else formData["image"] = null;
 
@@ -89,20 +87,15 @@
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
                         <button on:click={chooseImage} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Choose an Image</button>
 			<input type="file" id="image" style="display: none;" accept="image/*" on:change={(e) => onImageSelected(e)} bind:this={fileInput} name="image" />
+                        
+                        {#if imagePreview}
+                           <div class="p-2"></div>
+                           <img height="120px" width="120px" class="rounded-md" src={imagePreview} alt="Image Preview">
+                        {/if}
 
                         <div class="p-2"></div>
 
                         <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" on:click={submitData}>Submit</button>
-
-                        <div class="p-2"></div>
-
-                        <PostCard
-			   User={data.user}
-			   Caption={caption.value}
-			   Image={imagePreview}
-			   CreatedAt={new Date()}
-			   PostID="post_preview"
-		        />
 		</form>
 	</div>
 {:else}
