@@ -55,7 +55,7 @@
         if (caption.value !== "") formData["caption"] = caption.value;
         else formData["caption"] = { error: "Oops, a caption is required to post things." };
 
-        fetch("https://api.nightmarebot.tk/api/posts/post", { method: "POST", body: formData });
+        fetch("https://api.nightmarebot.tk/api/posts/post", { method: "POST", body: JSON.stringify(formData), headers: { "Content-Type": "application/json" } });
 
         return formData;
     };
