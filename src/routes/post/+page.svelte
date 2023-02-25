@@ -45,7 +45,7 @@
         };
     };
 
-    const submitData = () => {
+    const submitData = async () => {
         let formData = {};
         const caption = document.getElementById("caption") as HTMLInputElement;
 
@@ -55,8 +55,8 @@
         if (caption.value !== "") formData["caption"] = caption.value;
         else formData["caption"] = { error: "Oops, a caption is required to post things." };
 
-        console.log(formData);
-        return formData;
+        const res = await fetch("https://api.nightmarebot.tk/api/posts/post", { method: "POST", body: formData }).then((res) => res.json());
+        return res;
     };
 
     export let data: any;
@@ -95,7 +95,7 @@
 
                         <div class="p-2"></div>
 
-                        <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" on:click={submitData}>Submit</button>
+                        <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" on:click={await submitData}>Submit</button>
 		</form>
 	</div>
 {:else}
