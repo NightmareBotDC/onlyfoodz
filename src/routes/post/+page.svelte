@@ -55,7 +55,7 @@
         if (caption.value !== "") formData["caption"] = caption.value;
         else formData["caption"] = null;
 
-        formData["user"] = data.user.UserID;
+        formData["user"] = data.token;
 
         fetch("https://api.nightmarebot.tk/api/posts/post", {
              method: "POST", 
