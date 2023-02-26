@@ -65,6 +65,7 @@
              } 
         }).then((res) => {
            const data = res.json();
+           console.log(data);
 
            if (data.success) return window.location.href("/");
            else return Alert("Error:", "Something went Wrong :(", 5000);
