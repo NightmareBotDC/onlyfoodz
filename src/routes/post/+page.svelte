@@ -63,8 +63,8 @@
              headers: { 
                 "Content-Type": "application/json" 
              } 
-        }).then((res) => {
-           const data = res.json();
+        }).then(async (res) => {
+           const data = await res.json();
            console.log(data);
 
            if (data.success) return window.location.href("/");
