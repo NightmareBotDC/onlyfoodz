@@ -57,7 +57,18 @@
 
         formData["user"] = data.user.UserID;
 
-        fetch("https://api.nightmarebot.tk/api/posts/post", { method: "POST", body: JSON.stringify(formData), headers: { "Content-Type": "application/json" } });
+        fetch("https://api.nightmarebot.tk/api/posts/post", {
+             method: "POST", 
+             body: JSON.stringify(formData), 
+             headers: { 
+                "Content-Type": "application/json" 
+             } 
+        }).then((res) => {
+           const data = res.json();
+
+           if (data.success) return window.location.href("/");
+           else return Alert("Error:", "Something went Wrong :(", 5000);
+        });
 
         return formData;
     };
