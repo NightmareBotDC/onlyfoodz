@@ -47,13 +47,15 @@ export const load = async ({ request, setHeaders }) => {
 			return {
 				user: userData,
 				posts: posts,
-				userPosts: userPosts
+				userPosts: userPosts,
+                                token: cookies.token
 			};
 		}
 	} else
 		return {
 			user: null,
 			posts: posts,
-			userPosts: null
+			userPosts: null,
+                        token: null
 		};
 };
