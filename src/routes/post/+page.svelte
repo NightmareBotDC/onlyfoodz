@@ -60,8 +60,6 @@
 		if (team === 'myself') formData['user'] = data.token;
 		else formData['user'] = team;
 
-		console.log(formData);
-
 		fetch('https://api.nightmarebot.tk/api/posts/post', {
 			method: 'POST',
 			body: JSON.stringify(formData),
