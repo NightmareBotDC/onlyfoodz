@@ -59,6 +59,8 @@
 		if (team.value === "myself") formData["user"] = data.token;
         else formData["user"] = team.value;
 
+        console.log(formData);
+        
 		fetch('https://api.nightmarebot.tk/api/posts/post', {
 			method: 'POST',
 			body: JSON.stringify(formData),
@@ -67,7 +69,7 @@
 			}
 		}).then(async (res) => {
 			const data = await res.json();
-            
+
 			if (data.success) window.location.href = '/';
 			else return Alert('Error:', 'Something went Wrong :(', 5000);
 		});
