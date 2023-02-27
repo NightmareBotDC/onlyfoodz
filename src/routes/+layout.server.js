@@ -67,7 +67,7 @@ export const load = async ({ request, setHeaders }) => {
 			user: null,
 			posts: posts,
 			userPosts: null,
-                        userTeams: userTeams,
+                        userTeams: null,
                         token: null
 		};
 };
