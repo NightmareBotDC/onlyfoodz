@@ -113,8 +113,11 @@
 		<div class="p-1" />
 		<h2 class="text-white font-bold">You aren't in any teams yet!</h2>
 	{:else}
+                <h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
+	        <div class="p-1" />
+
                 {#each data.userTeams as item}
-                   <h2 class="text-white font-bold">{item.Username}</h2>
+                   <h2 class="text-white font-bold text-3xl">{item.Username}</h2>
                 {/each}
         {/if}
 {:else}
