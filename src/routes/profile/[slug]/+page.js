@@ -27,6 +27,20 @@ export async function load({ params }) {
 				};
 		});
 
+        let profileTeams;
+        if (!profile || profile.error || profile.team === true) profileTeams = null;
+        else
+           userTeams = await fetch(
+				`https://api.nightmarebot.tk/api/users/list_teams?id=${profile.UserID}`
+			).then((res) => {
+				const status = res.status;
+
+				if (status === 200) return res.json();
+				else
+					return {
+						error: 'Unable to reach server.'
+					};
+			});
 	return {
 		profile: profile,
 		profilePosts: profilePosts
