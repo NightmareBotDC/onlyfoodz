@@ -10,7 +10,7 @@
 	Description="Onlyfoodz is a social media platform where people share pictures and small videos of food."
 />
 
-{#if !data.profile || data.profile.error}
+{#if !data.profile || data.profile.error || data.profile.team === true}
 	<h2 class="text-white">Sorry, that profile cannot be found.</h2>
 {:else}
 	<div
