@@ -9,7 +9,7 @@
 <div
 	class="block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 >
-	<a href="/profile/{User.UserID}">
+	<a href="/{User.team ? 'team' : 'profile'}/{User.UserID}">
 		<h2 class="flex">
 			<img
 				class="h-8 rounded-full"
