@@ -19,7 +19,7 @@
 		<h2 class="flex">
 			<img
 				class="rounded-full"
-				src="https://cdn.discordapp.com/avatars/{data.profile.UserID}/{data.profile.Avatar}"
+				src={data.profile.Avatar}
 				height="60px"
 				width="60px"
 				alt="Profile Picture"
