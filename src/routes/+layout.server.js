@@ -58,7 +58,7 @@ export const load = async ({ request, setHeaders }) => {
 				user: userData,
 				posts: posts,
 				userPosts: userPosts,
-                                userTeams: userTeams
+                                userTeams: userTeams,
                                 token: cookies.token
 			};
 		}
