@@ -13,7 +13,7 @@
 		<h2 class="flex">
 			<img
 				class="h-8 rounded-full"
-				src="https://cdn.discordapp.com/avatars/{User.UserID}/{User.Avatar}"
+				src={User.Avatar}
 				height="30px"
 				width="30px"
 				alt="Profile Picture"
