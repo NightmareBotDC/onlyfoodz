@@ -28,7 +28,7 @@
 	let file: any;
 	let fileInput: any;
 
-    let team: any;
+	let team: any;
 
 	const chooseImage = () => {
 		const element = document.getElementById('image') as HTMLInputElement;
@@ -50,7 +50,6 @@
 	const submitData = () => {
 		let formData: any = {};
 		const caption = document.getElementById('caption') as HTMLInputElement;
-        const team = document.getElementById("team") as HTMLSelectElement;
 
 		if (file) formData['image'] = file.split(',')[1];
 		else formData['image'] = null;
@@ -58,10 +57,10 @@
 		if (caption.value !== '') formData['caption'] = caption.value;
 		else formData['caption'] = null;
 
-		if (team.value === "myself") formData["user"] = data.token;
-        else formData["user"] = team.value;
+		if (team === 'myself') formData['user'] = data.token;
+		else formData['user'] = team;
 
-        console.log(formData);
+		console.log(formData);
 
 		fetch('https://api.nightmarebot.tk/api/posts/post', {
 			method: 'POST',
@@ -139,16 +138,16 @@
 
 			<div class="p-2" />
 
-            <label class="text-white font-bold" for="team">Choose a Team:</label>
-            <select name="team" id="team" bind:value={team}>
-                <option value="myself">My Profile</option>
+			<label class="text-white font-bold" for="team">Choose a Team:</label>
+			<select name="team" id="team" bind:value={team}>
+				<option value="myself">My Profile</option>
 
-                {#each data.userTeams as item}
-                    <option value={item.UserID}>{item.Username}</option>
-                {/each}
-            </select>
+				{#each data.userTeams as item}
+					<option value={item.UserID}>{item.Username}</option>
+				{/each}
+			</select>
 
-            <div class="p-2"></div>
+			<div class="p-2" />
 
 			<button
 				class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -168,8 +167,7 @@
 				<p class="mt-4 mb-8 dark:text-gray-400">To view this page, you need to login.</p>
 				<button
 					on:click={loginDiscord}
-					c
-                    lass="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
+					class="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
 					>Login</button
 				>
 			</div>
