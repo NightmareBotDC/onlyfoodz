@@ -32,7 +32,7 @@ export const load = async ({ request, setHeaders }) => {
 				userPosts: null
 			};
 		else {
-                        const userTeams = await fetch(`https://api.nightmarebot.tk/api/users/list_teams?id=${user.UserID}`).then((res) => {
+                        const userTeams = await fetch(`https://api.nightmarebot.tk/api/users/list_teams?id=${userData.UserID}`).then((res) => {
 		const status = res.status;
 
 		if (status === 200) return res.json();
