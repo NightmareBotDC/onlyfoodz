@@ -85,4 +85,19 @@
 			{/each}
 		</div>
 	{/if}
+
+        {#if !data.profileTeams || data.profileTeams.error}
+		<h2 class="text-white font-bold">Unable to render teams.</h2>
+	{:else if data.profileTeams.length === 0}
+		<h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
+		<div class="p-1" />
+		<h2 class="text-white font-bold">You aren't in any teams yet!</h2>
+	{:else}
+		<h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
+		<div class="p-1" />
+
+		{#each data.profileTeams as item}
+			<h2 class="text-white font-bold text-3xl">{item.Username}</h2>
+		{/each}
+	{/if}
 {/if}
