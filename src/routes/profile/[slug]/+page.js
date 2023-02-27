@@ -41,6 +41,7 @@ export async function load({ params }) {
 						error: 'Unable to reach server.'
 					};
 			});
+
 	return {
 		profile: profile,
 		profilePosts: profilePosts,
