@@ -32,6 +32,16 @@ export const load = async ({ request, setHeaders }) => {
 				userPosts: null
 			};
 		else {
+                        const userTeams = await fetch(`https://api.nightmarebot.tk/api/users/list_teams?id=${user.UserID}`).then((res) => {
+		const status = res.status;
+
+		if (status === 200) return res.json();
+		else
+			return {
+				error: 'Unable to reach server.'
+			};
+	});
+
 			const userPosts = await fetch(
 				`https://api.nightmarebot.tk/api/posts/list_user?user_id=${userData.UserID}&type=1`
 			).then((res) => {
@@ -48,6 +58,7 @@ export const load = async ({ request, setHeaders }) => {
 				user: userData,
 				posts: posts,
 				userPosts: userPosts,
+                                userTeams: userTeams
                                 token: cookies.token
 			};
 		}
@@ -56,6 +67,7 @@ export const load = async ({ request, setHeaders }) => {
 			user: null,
 			posts: posts,
 			userPosts: null,
+                        userTeams: userTeams,
                         token: null
 		};
 };
