@@ -106,20 +106,20 @@
 		</div>
 	{/if}
 
-        {#if !data.userTeams || data.userTeams.error}
+	{#if !data.userTeams || data.userTeams.error}
 		<h2 class="text-white font-bold">Unable to render teams.</h2>
 	{:else if data.userTeams.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
 		<div class="p-1" />
 		<h2 class="text-white font-bold">You aren't in any teams yet!</h2>
 	{:else}
-                <h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
-	        <div class="p-1" />
+		<h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
+		<div class="p-1" />
 
-                {#each data.userTeams as item}
-                   <h2 class="text-white font-bold text-3xl">{item.Username}</h2>
-                {/each}
-        {/if}
+		{#each data.userTeams as item}
+			<h2 class="text-white font-bold text-3xl">{item.Username}</h2>
+		{/each}
+	{/if}
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
 		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
