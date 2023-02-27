@@ -48,7 +48,7 @@
 	const submitData = () => {
 		let formData: any = {};
 		const caption = document.getElementById('caption') as HTMLInputElement;
-        const team = document.getElementById("team") as HTMLSelectElement;
+                const team = document.getElementById("team") as HTMLSelectElement;
 
 		if (file) formData['image'] = file.split(',')[1];
 		else formData['image'] = null;
@@ -57,9 +57,9 @@
 		else formData['caption'] = null;
 
 		if (team.value === "myself") formData["user"] = data.token;
-        else formData["user"] = team.value;
+                else formData["user"] = team.value;
 
-        console.log(formData);
+                console.log(formData);
         
 		fetch('https://api.nightmarebot.tk/api/posts/post', {
 			method: 'POST',
