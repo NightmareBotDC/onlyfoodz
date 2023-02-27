@@ -203,7 +203,7 @@
 									<span class="sr-only">Open user menu</span>
 									<img
 										class="h-8 w-8 rounded-full"
-										src="https://cdn.discordapp.com/avatars/{user.UserID}/{user.Avatar}"
+										src="{user.Avatar}"
 										alt=""
 									/>
 								</button>
