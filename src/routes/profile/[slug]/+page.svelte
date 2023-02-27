@@ -64,7 +64,6 @@
 	<div class="p-4" />
 
 	{#if !data.profilePosts || data.profilePosts.error}
-		<h2 class="text-white font-bold">Unable to render posts.</h2>
 	{:else if data.profilePosts.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
 		<div class="p-1" />
@@ -87,7 +86,6 @@
 	{/if}
 
         {#if !data.profileTeams || data.profileTeams.error}
-		<h2 class="text-white font-bold">Unable to render teams.</h2>
 	{:else if data.profileTeams.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
 		<div class="p-1" />
