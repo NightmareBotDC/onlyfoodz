@@ -28,6 +28,8 @@
 	let file: any;
 	let fileInput: any;
 
+    let team: any;
+
 	const chooseImage = () => {
 		const element = document.getElementById('image') as HTMLInputElement;
 		element.click();
@@ -60,7 +62,7 @@
         else formData["user"] = team.value;
 
         console.log(formData);
-        
+
 		fetch('https://api.nightmarebot.tk/api/posts/post', {
 			method: 'POST',
 			body: JSON.stringify(formData),
@@ -138,7 +140,7 @@
 			<div class="p-2" />
 
             <label class="text-white font-bold" for="team">Choose a Team:</label>
-            <select name="team" id="team">
+            <select name="team" id="team" bind:value={team}>
                 <option value="myself">My Profile</option>
 
                 {#each data.userTeams as item}
