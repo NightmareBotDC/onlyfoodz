@@ -30,10 +30,10 @@
 
 	let team: any;
 
-	const chooseImage = () => {
+	/*const chooseImage = () => {
 		const element = document.getElementById('image') as HTMLInputElement;
 		element.click();
-	};
+	};*/
 
 	const onImageSelected = (e: any) => {
 		let image = e.target.files[0];
@@ -109,11 +109,11 @@
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
 			<button
-				on:click={chooseImage}
+				on:click={() => { Alert("Error:", "This feature has been temporarily disabled.", 5000) }}
 				class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				>Choose an Image</button
+				>Choose an Image (Disabled)</button
 			>
-			<input
+			<!--<input
 				type="file"
 				id="image"
 				style="display: none;"
@@ -132,7 +132,7 @@
 					src={imagePreview}
 					alt="Image Preview"
 				/>
-			{/if}
+			{/if}-->
 
 			<div class="p-2" />
 
