@@ -35,7 +35,7 @@
 			Bio: {data.team.Bio || 'None'}
 		</h5>
 		<p class="font-normal text-gray-700 dark:text-gray-400">
-			Team Creation Date: {new Date(data.profile.CreatedAt)}
+			Team Creation Date: {new Date(data.team.CreatedAt)}
 		</p>
 
 		{#if data.user}
