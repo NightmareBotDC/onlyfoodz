@@ -16,7 +16,7 @@ export async function load({ params }) {
 	if (!team || team.error) teamPosts = null;
 	else
 		teamPosts = await fetch(
-			`https://api.nightmarebot.tk/api/posts/list_user?user_id=${profile.UserID}&type=1`
+			`https://api.nightmarebot.tk/api/posts/list_user?user_id=${team.UserID}&type=1`
 		).then((res) => {
 			const status = res.status;
 
