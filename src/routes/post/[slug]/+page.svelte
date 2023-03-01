@@ -38,5 +38,6 @@
 		Image={data.post.post.Image}
 		CreatedAt={data.post.post.CreatedAt}
 		PostID={data.post.post.PostID}
+        Team={data.post.team}
 	/>
 {/if}
