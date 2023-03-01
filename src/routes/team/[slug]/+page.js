@@ -1,6 +1,6 @@
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
-	const team = await fetch(`https://api.nightmarebot.tk/api/users/get?id=${params.slug}`).then(
+	const team = await fetch(`https://api.nightmarebot.tk/api/teams/get?id=${params.slug}`).then(
 		(res) => {
 			const status = res.status;
 
