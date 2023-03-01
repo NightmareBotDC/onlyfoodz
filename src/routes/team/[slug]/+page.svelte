@@ -10,7 +10,7 @@
 	Description="Onlyfoodz is a social media platform where people share pictures and small videos of food."
 />
 
-{#if !data.team || data.team.error || data.team.team === true}
+{#if !data.team || data.team.error}
 	<h2 class="text-white">Sorry, that team cannot be found.</h2>
 {:else}
 	<div
