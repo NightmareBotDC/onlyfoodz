@@ -45,7 +45,7 @@ export const actions = {
             });
 
             data["image"] = i;
-        }
+        } else data["image"] = null;
 
         if (team === "myself") data["user"] = cookie.parse(request.headers.get("cookie") || "").token || null;
         else data["user"] = team;
