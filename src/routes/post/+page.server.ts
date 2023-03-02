@@ -1,6 +1,6 @@
 import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
 import cookie from "cookie";
-import { randomUUID } from "crypto";
+import { v4 as uuidv4 } from "uuid";
 
 // Initalize Cloudinary
 cloudinary.config({
@@ -37,7 +37,7 @@ export const actions = {
 
             const i = await cloudinary.uploader.upload(`data:image/jpeg;base64,${image}`, {
                 resource_type: "image",
-                public_id: randomUUID()
+                public_id: uuidv4()
             }).then((e) => {
                 return e.secure_url
             }).catch((e) => {
