@@ -30,10 +30,10 @@
 
 	let team: any;
 
-	const chooseImage = () => {
+	/*const chooseImage = () => {
 		const element = document.getElementById('image') as HTMLInputElement;
 		element.click();
-	};
+	};*/
 
 	const onImageSelected = (e: any) => {
 		let image = e.target.files[0];
@@ -80,7 +80,7 @@
 				class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 bg-gray-700 text-white placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
 			/>
 
-			<div class="p-2" />
+			<!--<div class="p-2" />
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
 			<button
@@ -107,7 +107,7 @@
 					src={imagePreview}
 					alt="Image Preview"
 				/>
-			{/if}
+			{/if}-->
 
 			<div class="p-2" />
 

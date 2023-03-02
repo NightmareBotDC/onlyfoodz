@@ -1,13 +1,13 @@
-import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
+// import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
 import cookie from "cookie";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 
-// Initalize Cloudinary
+/* Initalize Cloudinary
 cloudinary.config({
     cloud_name: "dh30c3f52",
     api_key: "276832668476137",
     api_secret: "ukpcxBExseUwdDi3mT8bwotmkKo"
-});
+});*/
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -16,7 +16,7 @@ export const actions = {
 
         const caption = requestData.get("caption") as String;
         const team = requestData.get("team") as any;
-        const file = requestData.get("image") as File;
+        //const file = requestData.get("image") as File;
         
         let data: any = {};
 
@@ -25,7 +25,7 @@ export const actions = {
             error: "Caption is required to post."
         };
 
-        if (file) {
+        /*if (file) {
             const reader = new FileReader();
             reader.readAsDataURL(file);
 
@@ -45,7 +45,8 @@ export const actions = {
             });
 
             data["image"] = i;
-        } else data["image"] = null;
+        } else*/
+        data["image"] = null;
 
         if (team === "myself") data["user"] = cookie.parse(request.headers.get("cookie") || "").token || null;
         else data["user"] = team;
