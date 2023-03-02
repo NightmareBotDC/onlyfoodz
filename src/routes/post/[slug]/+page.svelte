@@ -30,7 +30,7 @@
 		</div>
 	</section>
 {:else}
-	<Meta Title="Post" Description="`{data.post.post.Caption}` - {data.post.user.Username}" />
+	<Meta Title="Post" Description="'{data.post.post.Caption}' - {data.post.user.Username}" />
 
 	<PostCard
 		User={data.post.user}
