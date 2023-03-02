@@ -59,7 +59,7 @@ export const actions = {
         }).then(async (res) => {
             const data: any = await res.json();
 
-            if (data.success) throw redirect(300, "/");
+            if (data.success) throw redirect(302, "/");
             else throw error(500, data.error);
         }).catch((error) => {
             throw error(500, error);
