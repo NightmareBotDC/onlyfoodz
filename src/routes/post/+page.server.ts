@@ -1,4 +1,5 @@
 // import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
+import { redirect, error } from "@sveltejs/kit";
 import cookie from "cookie";
 // import { v4 as uuidv4 } from "uuid";
 
@@ -21,9 +22,7 @@ export const actions = {
         let data: any = {};
 
         if (caption || caption != "") data["caption"] = caption;
-        else return {
-            error: "Caption is required to post."
-        };
+        else throw error(422, "A caption is required.");
 
         /*if (file) {
             const reader = new FileReader();
@@ -60,8 +59,10 @@ export const actions = {
         }).then(async (res) => {
             const data: any = await res.json();
 
-            if (data.success) window.location.href = "/";
-            else return;
+            if (data.success) throw redirect(300, "/");
+            else throw error(500, data.error);
+        }).catch((error) => {
+            throw error(500, error);
         });
     }
 };
