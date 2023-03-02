@@ -30,10 +30,10 @@
 
 	let team: any;
 
-	/*const chooseImage = () => {
+	const chooseImage = () => {
 		const element = document.getElementById('image') as HTMLInputElement;
 		element.click();
-	};*/
+	};
 
 	const onImageSelected = (e: any) => {
 		let image = e.target.files[0];
@@ -45,35 +45,6 @@
 			imagePreview = a.target.result;
 			file = a.target.result;
 		};
-	};
-
-	const submitData = () => {
-		let formData: any = {};
-		const caption = document.getElementById('caption') as HTMLInputElement;
-
-		if (file) formData['image'] = file.split(',')[1];
-		else formData['image'] = null;
-
-		if (caption.value !== '') formData['caption'] = caption.value;
-		else formData['caption'] = null;
-
-		if (team === 'myself') formData['user'] = data.token;
-		else formData['user'] = team;
-
-		fetch('https://api.nightmarebot.tk/api/posts/post', {
-			method: 'POST',
-			body: JSON.stringify(formData),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}).then(async (res) => {
-			const data = await res.json();
-
-			if (data.success) window.location.href = '/';
-			else return Alert('Error:', 'Something went Wrong :(', 5000);
-		});
-
-		return formData;
 	};
 
 	export let data: any;
@@ -95,7 +66,11 @@
 	<div class="p-4" />
 
 	<div id="data">
-		<form>
+		<form
+            method="POST"
+            enctype="multipart/form-data"
+            action="?/new_post"
+        >
 			<label for="caption" class="sr-only">Caption (required)</label>
 			<input
 				type="text"
@@ -109,11 +84,11 @@
 
 			<label for="image" class="sr-only">Choose an Image (optional)</label>
 			<button
-				on:click={() => { Alert("Error:", "This feature has been temporarily disabled.", 5000) }}
+				on:click={chooseImage}
 				class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				>Choose an Image (Disabled)</button
+				>Choose an Image</button
 			>
-			<!--<input
+			<input
 				type="file"
 				id="image"
 				style="display: none;"
@@ -132,13 +107,13 @@
 					src={imagePreview}
 					alt="Image Preview"
 				/>
-			{/if}-->
+			{/if}
 
 			<div class="p-2" />
 
 			<label class="text-white font-bold" for="team">Choose a Team:</label>
 			<select name="team" id="team" bind:value={team}>
-				<option value="myself">My Profile</option>
+				<option value="myself" selected>My Profile</option>
 
 				{#each data.userTeams as item}
 					<option value={item.UserID}>{item.Username}</option>
@@ -149,8 +124,7 @@
 
 			<button
 				class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				type="button"
-				on:click={submitData}>Submit</button
+				type="submit">Submit</button
 			>
 		</form>
 	</div>
