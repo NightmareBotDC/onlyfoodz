@@ -1,6 +1,6 @@
-import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
+//import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
 import cookie from "cookie";
-import { randomUUID } from "node:crypto";
+import { randomUUID } from "crypto";
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -9,7 +9,7 @@ export const actions = {
 
         const caption = requestData.get("caption") as String;
         const team = requestData.get("team") as any;
-        const file = requestData.get("image") as File;
+        // const file = requestData.get("image") as File;
         
         let data: any = {};
 
@@ -18,7 +18,7 @@ export const actions = {
             error: "Caption is required to post."
         };
 
-        if (file) {
+        /*if (file) {
             const reader = new FileReader();
             reader.readAsDataURL(file);
 
@@ -38,7 +38,7 @@ export const actions = {
             });
 
             data["image"] = i;
-        }
+        }*/
 
         if (team === "myself") data["user"] = cookie.parse(request.headers.get("cookie") || "").token || null;
         else data["user"] = team;
