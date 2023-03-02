@@ -18,8 +18,16 @@ export const actions = {
         if (image || image != "") data["image"] = image;
         else data["image"] = null;
 
-        if (team === "myself") data["user"] = cookie.parse(request.headers.get("cookie") || "").token || null;
-        else data["user"] = team;
+        if (team === "myself") data["user"] = {
+            team: false,
+            user: null,
+            user_token: cookie.parse(request.headers.get("cookie") || "").token || null
+        }
+        else data["user"] = {
+            team: true,
+            user: team,
+            user_token: cookie.parse(request.headers.get("cookie") || "").token || null
+        };
 
         fetch("https://api.nightmarebot.tk/api/posts/post", {
             method: "POST",
