@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from './components/Header.svelte';
+        import Status from './components/Status.svelte';
 
 	export let data: any;
 </script>
@@ -11,4 +12,5 @@
 
 <section id="content" class="m-4">
 	<slot />
+        <Status />
 </section>
