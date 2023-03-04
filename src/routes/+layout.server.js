@@ -29,7 +29,8 @@ export const load = async ({ request, setHeaders }) => {
 			return {
 				user: null,
 				posts: posts,
-				userPosts: null
+				userPosts: null,
+                                notifications: cookies.notifications
 			};
 		else {
 			const userTeams = await fetch(
@@ -61,7 +62,8 @@ export const load = async ({ request, setHeaders }) => {
 				posts: posts,
 				userPosts: userPosts,
 				userTeams: userTeams,
-				token: cookies.token
+				token: cookies.token,
+                                notifications: cookies.notifications
 			};
 		}
 	} else
@@ -70,6 +72,7 @@ export const load = async ({ request, setHeaders }) => {
 			posts: posts,
 			userPosts: null,
 			userTeams: null,
-			token: null
+			token: null,
+                        notifications: cookies.notifications
 		};
 };
