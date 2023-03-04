@@ -3,7 +3,7 @@
 </script>
 
 {#if data}
-   <div class="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md">
+   <div class="p-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-md">
       {#if data.page.status === "UP"}
           <div class="flex items-center justify-center">
              <div class="p-2 bg-green-500 rounded-lg"></div>
