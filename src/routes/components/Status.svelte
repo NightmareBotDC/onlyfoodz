@@ -3,7 +3,7 @@
 </script>
 
 {#if data}
-   <div class="p-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md">
+   <div class="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md">
       {#if data.page.status === "UP"}
           <h2 class="text-green-700 font-bold text-center">All services are online!</h2>
       {/if}
