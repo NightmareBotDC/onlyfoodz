@@ -18,7 +18,7 @@
 
       {#if data.page.status === "UNDERMAINTENANCE"}
           <div class="flex">
-             <h2 class="text-white font-bold text-center"><span class="p-2 bg-white rounded-lg"><span> Some services are having issues!</h2>
+             <h2 class="text-white font-bold text-center"><span class="p-2 bg-white rounded-lg"><span> Some services are under maintenance!</h2>
           </div>
       {/if}
    </div>
