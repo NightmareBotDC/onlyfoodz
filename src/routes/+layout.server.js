@@ -12,6 +12,14 @@ export const load = async ({ request, setHeaders }) => {
 			};
 	});
 
+        const status = await fetch("https://nightmare-project.instatus.com/summary.json").then((res) => {
+		if (res.status === 200) return res.json();
+		else
+			return {
+				error: 'Unable to reach server.'
+			};
+	});
+
 	if (cookies.token) {
 		const userData = await fetch(
 			`https://api.nightmarebot.tk/api/users/getwithtoken?token=${cookies.token}`
@@ -29,7 +37,8 @@ export const load = async ({ request, setHeaders }) => {
 			return {
 				user: null,
 				posts: posts,
-				userPosts: null
+				userPosts: null,
+                                status: status
 			};
 		else {
 			const userTeams = await fetch(
@@ -61,7 +70,8 @@ export const load = async ({ request, setHeaders }) => {
 				posts: posts,
 				userPosts: userPosts,
 				userTeams: userTeams,
-				token: cookies.token
+				token: cookies.token,
+                                status: status
 			};
 		}
 	} else
@@ -70,6 +80,7 @@ export const load = async ({ request, setHeaders }) => {
 			posts: posts,
 			userPosts: null,
 			userTeams: null,
-			token: null
+			token: null,
+                        status: status
 		};
 };
