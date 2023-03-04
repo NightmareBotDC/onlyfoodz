@@ -2,4 +2,6 @@
    export let data: any;
 </script>
 
-<h2 class="text-white font-bold">{JSON.stringify(data)}</h2>
+{#if data.status.page.up === "UP"}
+    <h2 class="text-green-700 font-bold">All services are online!</h2>
+{/if}
