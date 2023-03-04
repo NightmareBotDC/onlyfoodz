@@ -12,5 +12,5 @@
 
 <section id="content" class="m-4">
 	<slot />
-        <Status />
+        <Status data={data.status || null} />
 </section>
