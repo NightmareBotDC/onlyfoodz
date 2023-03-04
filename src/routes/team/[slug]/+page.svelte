@@ -32,7 +32,7 @@
 		<div class="p-2" />
 
 		<h5 class="font-normal text-gray-700 dark:text-gray-400">
-			Bio: {data.team.Bio || 'None'}
+			Description: {data.team.Bio || 'None'}
 		</h5>
 		<p class="font-normal text-gray-700 dark:text-gray-400">
 			Team Creation Date: {new Date(data.team.CreatedAt)}
@@ -56,7 +56,7 @@
 	{:else if data.teamPosts.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
 		<div class="p-1" />
-		<h2 class="text-white font-bold">This user does not have any posts, at this time.</h2>
+		<h2 class="text-white font-bold">This team does not have any posts, at this time.</h2>
 	{:else}
 		<div id="posts">
 			<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
