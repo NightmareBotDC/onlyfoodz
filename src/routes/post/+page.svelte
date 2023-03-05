@@ -2,6 +2,9 @@
 	import Meta from '../components/Meta.svelte';
 	import Swal from 'sweetalert2';
 
+    let Caption: string;
+    let ImagePreview: string;
+
 	const Alert = (title: string, description: string, time: number) => {
 		Swal.fire({
 			title: title,
@@ -52,7 +55,8 @@
 				id="caption"
 				name="caption"
 				class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 bg-gray-700 text-white placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-			/>
+                bind:value={Caption}
+            />
 
 			<div class="p-2" />
 
@@ -63,7 +67,8 @@
 				id="image"
 				name="image"
 				class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 bg-gray-700 text-white placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-			/>
+                bind:value={ImagePreview}
+            />
 
 			<div class="p-2" />
 
@@ -83,6 +88,34 @@
 				type="submit">Submit</button
 			>
 		</form>
+
+        <div class="p-2"></div>
+
+        <div
+            class="block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        >
+            <h2 class="flex">
+                    <img
+                        class="h-8 rounded-full"
+                        src={data.user.Avatar}
+                        height="30px"
+                        width="30px"
+                        alt="Profile Picture"
+                    />
+                    <p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">{data.user.Username}</p>
+                </h2>
+        
+                <div class="p-2" />
+        
+                {#if ImagePreview}
+                    <img src={ImagePreview} alt="Post Card" height="120px" width="120px" />
+                {/if}
+        
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{Caption}</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">
+                    Likes: 275 | Dislikes: 1
+                </p>
+        </div>      
 	</div>
 {:else}
 	<section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
