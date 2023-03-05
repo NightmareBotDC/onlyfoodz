@@ -12,9 +12,11 @@
 	};
 
 	const loginDiscord = async () => {
-		const data: any = await fetch('https://api.nightmarebot.tk/auth/discord/login').catch((error) => {
-			Alert('Error:', error, 4000);
-		});
+		const data: any = await fetch('https://api.nightmarebot.tk/auth/discord/login').catch(
+			(error) => {
+				Alert('Error:', error, 4000);
+			}
+		);
 
 		if (data.status === 200) {
 			const json = await data.json();
@@ -42,11 +44,7 @@
 	<div class="p-4" />
 
 	<div id="data">
-		<form
-            method="POST"
-            enctype="multipart/form-data"
-            action="?/new_post"
-        >
+		<form method="POST" enctype="multipart/form-data" action="?/new_post">
 			<label for="caption" class="sr-only">Caption (required)</label>
 			<input
 				type="text"
@@ -56,9 +54,9 @@
 				class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 bg-gray-700 text-white placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
 			/>
 
-            <div class="p-2" />
+			<div class="p-2" />
 
-            <label for="image" class="sr-only">Image URL (optional)</label>
+			<label for="image" class="sr-only">Image URL (optional)</label>
 			<input
 				type="text"
 				placeholder="Paste your Image Link here! (optional)"

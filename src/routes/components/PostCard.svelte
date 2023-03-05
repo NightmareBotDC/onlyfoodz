@@ -4,7 +4,7 @@
 	export let Image: string;
 	export let CreatedAt: Date;
 	export let PostID: string;
-    export let Team: boolean;
+	export let Team: boolean;
 </script>
 
 <div

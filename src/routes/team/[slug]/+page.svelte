@@ -43,8 +43,9 @@
 
 			<div id="profile_actions">
 				<button
-				    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				>Follow</button>
+					class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+					>Follow</button
+				>
 			</div>
 		{/if}
 	</div>
@@ -52,7 +53,7 @@
 	<div class="p-4" />
 
 	{#if !data.teamPosts || data.teamPosts.error}
-        <!-- There was an error, or our servers are experiencing issues. -->
+		<!-- There was an error, or our servers are experiencing issues. -->
 	{:else if data.teamPosts.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
 		<div class="p-1" />
@@ -69,7 +70,7 @@
 					Image={item.Image}
 					CreatedAt={item.CreatedAt}
 					PostID={item.PostID}
-                                        Team={true}
+					Team={true}
 				/>
 			{/each}
 		</div>

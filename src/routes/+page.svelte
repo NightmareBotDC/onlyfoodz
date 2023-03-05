@@ -29,7 +29,7 @@
 			Image={item.post.Image}
 			CreatedAt={item.post.CreatedAt}
 			PostID={item.post.PostID}
-                        Team={item.team}
+			Team={item.team}
 		/>
 	{/each}
 {/if}

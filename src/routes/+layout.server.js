@@ -12,7 +12,7 @@ export const load = async ({ request, setHeaders }) => {
 			};
 	});
 
-        const status = await fetch("https://nightmare-project.instatus.com/summary.json").then((res) => {
+	const status = await fetch('https://nightmare-project.instatus.com/summary.json').then((res) => {
 		if (res.status === 200) return res.json();
 		else
 			return {
@@ -38,7 +38,7 @@ export const load = async ({ request, setHeaders }) => {
 				user: null,
 				posts: posts,
 				userPosts: null,
-                                status: status
+				status: status
 			};
 		else {
 			const userTeams = await fetch(
@@ -71,7 +71,7 @@ export const load = async ({ request, setHeaders }) => {
 				userPosts: userPosts,
 				userTeams: userTeams,
 				token: cookies.token,
-                                status: status
+				status: status
 			};
 		}
 	} else
@@ -81,6 +81,6 @@ export const load = async ({ request, setHeaders }) => {
 			userPosts: null,
 			userTeams: null,
 			token: null,
-                        status: status
+			status: status
 		};
 };

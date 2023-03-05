@@ -201,11 +201,7 @@
 									on:click={openProfileMenu}
 								>
 									<span class="sr-only">Open user menu</span>
-									<img
-										class="h-8 w-8 rounded-full"
-										src="{user.Avatar}"
-										alt=""
-									/>
+									<img class="h-8 w-8 rounded-full" src={user.Avatar} alt="" />
 								</button>
 							</div>
 

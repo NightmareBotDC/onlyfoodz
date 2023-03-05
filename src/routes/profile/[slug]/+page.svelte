@@ -64,7 +64,7 @@
 	<div class="p-4" />
 
 	{#if !data.profilePosts || data.profilePosts.error}
-        <!-- There was an error, or our servers are experiencing issues. -->
+		<!-- There was an error, or our servers are experiencing issues. -->
 	{:else if data.profilePosts.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Posts:</h2>
 		<div class="p-1" />
@@ -81,14 +81,14 @@
 					Image={item.Image}
 					CreatedAt={item.CreatedAt}
 					PostID={item.PostID}
-                    Team={false}
+					Team={false}
 				/>
 			{/each}
 		</div>
 	{/if}
 
-        {#if !data.profileTeams || data.profileTeams.error}
-        <!-- There was an error, or our servers are experiencing issues. -->
+	{#if !data.profileTeams || data.profileTeams.error}
+		<!-- There was an error, or our servers are experiencing issues. -->
 	{:else if data.profileTeams.length === 0}
 		<h2 class="text-white font-bold text-3xl text-center">Teams:</h2>
 		<div class="p-1" />
