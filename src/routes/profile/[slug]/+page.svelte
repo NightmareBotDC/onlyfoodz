@@ -79,8 +79,9 @@
 					User={data.profile}
 					Caption={item.Caption}
 					Image={item.Image}
-					CreatedAt={item.CreatedAt}
-					PostID={item.PostID}
+                    Likes={item.Likes}
+                    Dislikes={item.Dislikes}
+                    PostID={item.PostID}
 					Team={false}
 				/>
 			{/each}

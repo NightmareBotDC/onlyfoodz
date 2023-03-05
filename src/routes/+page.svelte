@@ -26,7 +26,6 @@
 			Image={item.post.Image}
 			Likes={item.post.Likes}
 			Dislikes={item.post.Dislikes}
-			CreatedAt={item.post.CreatedAt}
 			PostID={item.post.PostID}
 			Team={item.team}
 		/>
