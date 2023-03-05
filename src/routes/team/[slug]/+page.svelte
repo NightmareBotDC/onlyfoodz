@@ -68,6 +68,8 @@
 					User={data.team}
 					Caption={item.Caption}
 					Image={item.Image}
+					Likes={item.Likes}
+					Dislikes={item.Dislikes}
 					CreatedAt={item.CreatedAt}
 					PostID={item.PostID}
 					Team={true}

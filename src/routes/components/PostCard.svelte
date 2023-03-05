@@ -2,6 +2,8 @@
 	export let User: any;
 	export let Caption: string;
 	export let Image: string;
+	export let Likes: number;
+	export let Dislikes: number;
 	export let CreatedAt: Date;
 	export let PostID: string;
 	export let Team: boolean;
@@ -32,6 +34,9 @@
 
 		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{Caption}</h5>
 		<p class="font-normal text-gray-700 dark:text-gray-400">{new Date(CreatedAt)}</p>
+		<p class="pt-2 font-normal text-gray-700 dark:text-gray-400">
+			Likes: {String(Likes)} | Dislikes: {String(Dislikes)}
+		</p>
 	</a>
 </div>
 
