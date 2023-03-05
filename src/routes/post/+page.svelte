@@ -102,7 +102,7 @@
                         width="30px"
                         alt="Profile Picture"
                     />
-                    <p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">{data.user.Username}</p>
+                    <p class="ml-2 mt-1 mb-1 font-normal text-gray-700 dark:text-gray-400">{data.user.Username} (Preview)</p>
                 </h2>
         
                 <div class="p-2" />
