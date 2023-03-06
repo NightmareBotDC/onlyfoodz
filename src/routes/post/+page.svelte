@@ -14,7 +14,7 @@
 		});
 	};
 
-	const loginDiscord = async () => {
+	const login = async () => {
 		window.location.href = 'https://api.nightmarebot.tk/auth/login?client_id=onlyfoodz-0091';
 	};
 
@@ -119,7 +119,7 @@
 				<p class="text-2xl font-semibold md:text-3xl">Unauthorized</p>
 				<p class="mt-4 mb-8 dark:text-gray-400">To view this page, you need to login.</p>
 				<button
-					on:click={loginDiscord}
+					on:click={login}
 					class="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
 					>Login</button
 				>

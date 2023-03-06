@@ -27,7 +27,7 @@
 		return classes.filter(Boolean).join(' ');
 	};
 
-	const loginDiscord = async () => {
+	const login = async () => {
 		window.location.href = 'https://api.nightmarebot.tk/auth/login?client_id=onlyfoodz-0091';
 	};
 
@@ -72,7 +72,7 @@
 		else notificationPanel.className = 'absolute right-0 z-10 mt-2 w-48 origin-top-right invisible';
 	};
 
-	export let notifications = [];
+	export let notifications: any = [];
 </script>
 
 <nav class="bg-gray-800">
@@ -231,7 +231,7 @@
 						{:else}
 							<button
 								type="button"
-								on:click={loginDiscord}
+								on:click={login}
 								class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
 							>
 								Login
