@@ -36,8 +36,8 @@
 		User={data.post.user}
 		Caption={data.post.post.Caption}
 		Image={data.post.post.Image}
-        Likes={data.post.post.Likes}
-        Dislikes={data.post.post.Dislikes}
+		Likes={data.post.post.Likes}
+		Dislikes={data.post.post.Dislikes}
 		PostID={data.post.post.PostID}
 		Team={data.post.team}
 	/>
